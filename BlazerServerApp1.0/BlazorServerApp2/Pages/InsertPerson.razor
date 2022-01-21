@@ -1,0 +1,39 @@
+﻿@page "/InsertPerson"
+
+@using DataAccessLibrary
+@using DataAccessLibrary.Models
+@using BlazorServerApp2.Models
+
+@inject IPeopleData _db
+
+<h3>Insert Person to database</h3>
+<EditForm Model="@newPerson" OnValidSubmit="@InsertPersoMethod">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    
+    <InputText Id="FirstName" @bind-Value="newPerson.FirstName" />
+    <InputText Id="LastName" @bind-Value="newPerson.LastName" />
+    <InputText Id="EmailAdress" @bind-Value ="newPerson.EmailAdress" />
+
+    <button type="submit" class="btn btn-danger">Submit</button>
+</EditForm>
+
+
+
+@code {
+    private DisplayPersonModel newPerson = new DisplayPersonModel();
+
+    private async Task InsertPersoMethod()
+    {
+        PersonModel p = new PersonModel
+        {
+            FirstName = newPerson.FirstName,
+            LastName = newPerson.LastName,
+            EmailAdress = newPerson.EmailAdress
+        };
+
+        await _db.InsertPerson(p);
+
+        newPerson = new DisplayPersonModel();
+    }
+}

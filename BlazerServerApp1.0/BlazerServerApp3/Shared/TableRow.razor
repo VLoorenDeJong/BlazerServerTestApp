@@ -1,0 +1,32 @@
+﻿@using DataAccessLibrary
+@using DataAccessLibrary.Models
+
+@inject IPeopleData _peopleDb
+
+
+
+@if (people == null)
+{
+    <p><em>Loading-_-_-_-_-__</em></p>
+}
+@if (people != null)
+{
+    @foreach (var person in people)
+    {       
+        <tr>
+            <td>@person.FirstName</td>
+            <td>@person.LastName</td>
+            <td>@person.EmailAdress</td>
+        </tr>       
+    }
+}
+@code {
+    private List<PersonModel> people;
+
+    protected override async Task OnInitializedAsync()
+    {
+        people = await _peopleDb.GetPeople();
+    }
+
+
+}

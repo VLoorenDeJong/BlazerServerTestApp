@@ -1,0 +1,37 @@
+﻿<h3>InsertPerson</h3>
+
+@using DataAccessLibrary.Models
+@using DataAccessLibrary
+@using BlazerServerApp3.Models
+
+@inject IPeopleData _people
+<EditForm Model="@newPerson" OnValidSubmit="@InsertPersonToDatabase">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText Id="FirstName" @bind-Value="@newPerson.FirstName">     </InputText>
+    <InputText Id="LastName" @bind-Value="@newPerson.LastName">      </InputText>
+    <InputText Id="EmailAdress" @bind-Value="@newPerson.EmailAdress">   </InputText>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+
+
+@code {
+    private DisplayPersonModel newPerson = new DisplayPersonModel();
+
+    private async Task InsertPersonToDatabase()
+    {
+        PersonModel p = new PersonModel
+        {
+            FirstName = newPerson.FirstName,
+            LastName = newPerson.LastName,
+            EmailAdress = newPerson.EmailAdress
+        };
+
+        await _people.InsertPerson(p);
+
+        newPerson = new DisplayPersonModel();
+    }
+}

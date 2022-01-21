@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLibrary", "DataAccessLibrary\DataAccessLibrary.csproj", "{B03FD399-9B90-4023-A48F-E6D7CEB7BA52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazerServerApp3", "BlazerServerApp3\BlazerServerApp3.csproj", "{BEC1CEE8-E1AB-4EB3-A4D4-279852EE77AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B03FD399-9B90-4023-A48F-E6D7CEB7BA52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03FD399-9B90-4023-A48F-E6D7CEB7BA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03FD399-9B90-4023-A48F-E6D7CEB7BA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03FD399-9B90-4023-A48F-E6D7CEB7BA52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEC1CEE8-E1AB-4EB3-A4D4-279852EE77AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC1CEE8-E1AB-4EB3-A4D4-279852EE77AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC1CEE8-E1AB-4EB3-A4D4-279852EE77AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC1CEE8-E1AB-4EB3-A4D4-279852EE77AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {322DBB86-D413-4070-8B91-54AC9C7A3EBE}
+	EndGlobalSection
+EndGlobal
